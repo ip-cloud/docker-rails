@@ -1,0 +1,24 @@
+# IP Cloud Rails Base Image
+
+This docker repository is built up out of several branches, each representing a
+different ruby and/or deployment version. This repository offers:
+
+- Deployment environment
+- Development environment
+- on-build environment
+
+# Usage
+
+You can use the base image (i.e. 2.x) as a base for your own Ruby on Rails
+application. Here you'll have to write your own Dockerfile to deploy your app
+
+Optionally you can also use the `onbuild-2.x` branches to use the provided
+ packaging options. You only need to create the following `Dockerfile` to build
+ your container:
+
+ ```
+ FROM ipcloud/rails:onbuild-2.x
+ ```
+
+
+
