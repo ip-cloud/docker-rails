@@ -11,6 +11,12 @@ VOLUME /usr/src/app/public
 
 WORKDIR /usr/src/app
 
+RUN bundle config --global frozen 1
+
+ONBUILD COPY Gemfile* .
+ONBUILD RUN bundle install --deployment --without=test
+ONBUILD COPY . .
+
 EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
